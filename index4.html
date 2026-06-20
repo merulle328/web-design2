@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>  <style>
+    body {
+      background-color: #FAF4EB;
+      font-family: 'Bounded', Arial, sans-serif;
+      font-size: 24px;
+      
+    }
+
+    .navbar-custom {
+      background: #0B1D26;
+      border-radius: 20px;
+      padding: 30px 50px;
+    
+      font-weight: 200;
+      
+    }
+    .contblock{
+        
+        font-size: 20px;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    .contblock p{
+        padding-top: 15px;
+        font-weight: 200;
+
+    }
+
+    .navbar-custom a {
+      color: #fff ;
+    }
+
+    h4{
+        font-size: 48px;
+    }
+    @media (max-width:1200px) and (min-width: 822px){
+      h1 {
+      font-size: 80px;
+      font-weight: 700;
+      margin-bottom: 80px;}
+    }
+      @media (max-width:823px) and (min-width: 374px){
+      h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 80px;
+    }}
+      @media (max-width:1920px) and (min-width: 1201px){
+      h1 {
+      font-size: 128px;
+      font-weight: 700;
+      margin-bottom: 80px;
+    }
+
+    }
+  
+    .popup-container {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pop-content {
+    background-color: white;
+
+    width: 1200px;
+    padding: 40px;
+
+    border-radius: 10px;
+
+    position: relative;
+
+    margin: 5vh auto;
+
+    text-align: left;
+}
+.pop-content div{
+  margin: 40px 0;
+}
+
+.close-btn {
+    position: absolute;
+
+    right: 10px;
+    top: 5px;
+
+    border: none;
+    background: none;
+
+    font-size: 22px;
+    cursor: pointer;
+}
+.starss{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.starss input{
+  display: none;
+}
+.starss label{
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3E%3C/polygon%3E%3C/svg%3E");;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: transform 0.2s;
+}
+
+.starss label:hover ~ label {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='orange' stroke='orange' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3E%3C/polygon%3E%3C/svg%3E");
+}
+
+.rating label:active {
+  transform: scale(0.9); 
+}
+input {
+    width: 90%;
+
+    padding: 10px;
+    margin-top: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.popinf{
+  margin: 60px 0;
+}
+#comment{
+  width: 666px;
+  border-radius: 10px;
+  height: 200px;
+}
+.navbar-toggler {
+  border-color: rgba(255,255,255,.5);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+@media (max-width: 992px) {
+  .navbar-expand-custom .navbar-collapse {
+    display: none !important;
+  }
+
+  .navbar-expand-custom .navbar-collapse.show {
+    display: block !important;
+  }
+
+  .navbar-expand-custom .navbar-toggler {
+    display: block;
+  }
+}
+
+@media (min-width: 993px) {
+  .navbar-expand-custom .navbar-toggler {
+    display: none;
+  }
+
+  .navbar-expand-custom .navbar-collapse {
+    display: flex !important;
+  }
+}
+
+    
+    .form-wrapper {
+      background: #fff;
+      border: 2px solid #FF5A1F;
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .form-control {
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .btn-main {
+      background: #FF5A1F;
+      border: none;
+      color: white;
+      font-weight: 700;
+      border-radius: 10px;
+      padding: 10px 20px;
+    }
+    .contblock4{
+
+        display: flex;
+        flex-direction: row;
+        width: 40px;
+        gap: 10px;
+    }
+    .contblock4 img{
+        max-width: 56px;
+        max-height: 56px;
+        object-fit: cover;
+        padding-top: 20px;
+
+    }
+
+  
+
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .circle {
+      width: 30px;
+      height: 30px;
+      background: #D9D9D9;
+      border-radius: 50%;
+    }
+
+    
+    .footer {
+      background-image: url(img/footer.png) ;
+      background-size: cover;
+     
+      height: auto;
+      color: #fff;
+      padding-top:20vh ;
+      margin-top: 80px;
+      font-size: 20px;
+      font-weight: 200;
+    }
+
+    
+
+    .map {
+      background: #ccc;
+      height: 150px;
+      border-radius: 12px;
+    }
+    @font-face {
+        font-family: 'Bounded';
+        src: url('\fonts\Bounded\Bounded-Regular.otf') format('otf');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Bounded';
+        src: url('\fonts\Bounded\Bounded-Light.otf') format('otf');
+        font-weight: 200;
+        font-style: light;
+        font-display: swap;
+    }
+    .navbar-brand{
+        font-size: 48px;
+        font-weight: 400;
+        
+    }
+    .cust{
+        width: 1000px;
+    }
+  .navbur{
+    color: white;
+  }
+
+
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-custom navbur">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="index5.html">
+            <img src="img/ICONS/3.png" alt="">
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <div class="navbar-nav mx-auto gap-lg-5 cust">
+                <a class="nav-link" href="index8.html">Меню</a>
+                <a class="nav-link" href="index2.html">Адреса</a>
+                <a class="nav-link" href="index4.html">О нас</a>
+                <a class="nav-link" href="index.html">Контакты</a>
+            </div>
+
+            <div class="d-flex align-items-center">
+                <img class="px-3" src="img/ICONS/1.png" alt="">
+                <img class="px-2" src="img/ICONS/2.png" alt="">
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+
+
+
+<div class=" custom container py-4">
+
+
+
+ 
+  <div class="mt-5 mb-5" >
+    <h1>Есть вопросы?</h1>
+    <p class="mb-5">Мы с радостью на них ответим.</p>
+    <p>Заполняйте форму ниже и наши сотрудники свяжутся с Вами.</p>
+  </div>
+
+ 
+    <div class="row mt-5 mb-5">
+    
+    <h4 class="mb-3">ОСТАВИТЬ ЗАЯВКУ</h4>
+    <div class="col-12 col-md-12 col-lg-8 ">
+      <div class="form-wrapper">
+        
+        <label class="form-label">Имя</label>
+        <input type="text" class="form-control" name="Имя" placeholder="Имя">
+        <label class="form-label">Фамилия</label>
+        <input type="text" class="form-control" name="Фамилия" placeholder="Фамилия">
+        <label class="form-label">Номер телефона</label>
+        <input type="text" class="form-control" name="Номер телефона" placeholder="+7 (xxx)-xxx-xx-xx">
+        <label class="form-label">Почта</label>
+        <input type="email" class="form-control" name="Почта" placeholder="primer@mail.ru">
+        <label class="form-label">Ваш вопрос</label>
+        <textarea class="form-control" rows="10" name="Ваш вопрос" placeholder="Ваш вопрос..."></textarea>
+        <div class="text-center">
+            <button class=" btn btn-main w-50 mt-3 ">Оставить заявку</button>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    
+    <div class="col-12  mt-5 ">
+      <h4 class="mb-3">Контакты</h4>
+
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-12">
+          <div class="contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <span>RoboShawa@gmail.ru</span>
+          </div>
+          <div class="contact-item">
+            <i class="bi bi-telegram"></i>
+            <span>@RoboShawa</span>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12 col-12">
+          <div class="contact-item">
+            <i class="bi bi-whatsapp"></i>
+            <span>@RoboShawa19</span>
+          </div>
+          <div class="contact-item">
+            <i class="bi bi-telephone-fill"></i>
+            <span>+7 (xxx)-xxx-xx-xx</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+ 
+  
+
+</div>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-12 mb-5">
+        <a class="navbar-brand " href="#">
+            <img class="d-inline-block align-text-center" src="img/ICONS/3.png" alt="" >
+             РобоШава
+        </a>
+        
+      </div>
+
+      <div class="col-lg-4">
+        <div class="contblock">
+            <h5> Документы</h5>
+                <p>
+                    Политика конфиденциальности
+                    Пользовательское соглашение
+                    Условия доставки и оплаты
+                </p>
+        </div>
+        <div class="contblock">
+            <h5> Контакты</h5>
+                <p>
+                    Телефон: +7 (XXX) XXX-XX-XX
+                    Email: info@roboshava.ru
+                </p>
+        </div> 
+        <div class="contblock">
+            <h5> Вакансии</h5>
+                <p>
+                    <span>Хочешь работать в РобоШаве?</span>
+                    <span> Отправляй резюме на hr@roboshava.ru</span>
+                    Или пиши в Telegram: @roboshava_hr
+                </p>
+        </div>
+    
+    </div>
+     
+
+
+
+      <div class="col-lg-4">
+            <div class="contblock">
+                <h5> Адреса</h5>
+                    <p>
+                        г. Москва, ул. КиберШавная, д. 42, 
+                        г. Санкт-Петербург, пр. Роботизированный, д. 15, лит. А
+                    </p>
+               </div>
+                <div class="contblock">
+                    <h5> Доставка</h5>
+                    <p>
+                        Работаем по городу 
+                        Время доставки: 30–60 минут
+                        Минимальный заказ: от 899 р
+                    
+                    </p>
+                </div>
+                <div class="contblock">
+                    <h5>Наши соц сети</h5>
+                        <div class="contblock4">
+                            <img src="img/ICONS/4.png" alt="">
+                            <img src="img/ICONS/5.png" alt="">
+                            <img src="img/ICONS/6.png" alt="">
+
+                        </div>
+               
+                </div>
+      </div>
+    
+     
+        <div class="col-lg-4" style="position:relative;overflow:hidden;">
+            <a href="https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Санкт‑Петербург</a>
+            <a href="https://yandex.ru/maps/2/saint-petersburg/search/bootstrap%20%D0%BA%D0%B0%D0%BA%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%82%D1%8C%20gap%20%D0%B2%20%D1%84%D0%BB%D0%B5%D0%BA%D1%81%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B5/?ll=30.314997%2C59.938784&sll=30.314997%2C59.937374&source=serp_navig&utm_medium=mapframe&utm_source=maps&z=9" style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс Карты — транспорт, навигация, поиск мест</a>
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=30.314997%2C59.938784&mode=search&sll=30.314997%2C59.937374&source=serp_navig&text=bootstrap%20%D0%BA%D0%B0%D0%BA%20%D0%B7%D0%B0%D0%B4%D0%B0%D1%82%D1%8C%20gap%20%D0%B2%20%D1%84%D0%BB%D0%B5%D0%BA%D1%81%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B5&z=9" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+        </div>
+        
+        <div class=" col-lg-12 text-center pt-5">
+            <hr>
+            <p class="ZNAK">© 2026 РобоШава — шаурма будущего уже сегодня</p>
+        </div>
+
+    </div>
+  </div>
+
+</footer>
+  <div class="popup-container" id="pop">
+        <div class="pop-content">
+            <h2>ОЦЕНИТЕ НАШУ РАБОТУ</h2>
+            <button class="close-btn">x</button>
+            <div class="popinf">
+              <div>
+                  <h3> Оцените качество работы сайта</h3>
+                  <div class="starss">
+                    <input type="radio" id="star5" value="5"><label for="star5"></label>
+                    <input type="radio" id="star5" value="4"><label for="star4"></label>
+                    <input type="radio" id="star5" value="3"><label for="star3"></label>
+                    <input type="radio" id="star5" value="2"><label for="star2"></label>
+                    <input type="radio" id="star5" value="1"><label for="star1"></label>
+
+
+
+                  </div>
+              </div>
+              <div>
+                  <h3> Нашли свой вкус шавермы?</h3>
+                  <button class="btn btn-main  mt-3">Да</button>
+                  <button class="btn btn-main  mt-3">Нет</button>
+
+              </div>
+            <div>
+                <h3> Ваш комментарий</h3>
+                <textarea  id="comment" placeholder="Введите ваш комментарий"></textarea>
+            </div>
+
+            </div>
+            <button class="btn btn-main w-50 mt-3"> ОСТАВИТЬ ОЦЕНКУ</button>
+        </div>
+  </div>
+<script src="script7.js"></script>
+
+</body>
+</html>
